@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Cricket Auction Login</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:linear-gradient(135deg,#020617,#1e3a8a);
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+}
+
+.container{
+background:#0f172a;
+padding:40px;
+border-radius:15px;
+width:350px;
+text-align:center;
+box-shadow:0 0 25px rgba(0,0,0,0.6);
+}
+
+h2{
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:none;
+font-size:14px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:10px;
+background:#22c55e;
+border:none;
+border-radius:8px;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#16a34a;
+}
+
+.register{
+margin-top:15px;
+}
+
+a{
+color:#3b82f6;
+text-decoration:none;
+}
+
+a:hover{
+color:#60a5fa;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🏏 Cricket Auction Login</h2>
+
+<form action="/login" method="POST">
+
+<input name="userid" placeholder="Enter 5 Digit ID" required>
+
+<input type="password" name="password" placeholder="Enter Password" required>
+
+<button type="submit">Login</button>
+
+</form>
+
+<div class="register">
+New User? <a href="/register">Register Here</a>
+</div>
+
+</div>
+
+</body>
+</html>

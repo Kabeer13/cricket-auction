@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Cricket Auction</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+}
+
+table{
+margin:auto;
+border-collapse:collapse;
+width:70%;
+}
+
+td,th{
+padding:12px;
+border:1px solid white;
+}
+
+input{
+padding:5px;
+}
+
+button{
+padding:6px 12px;
+background:green;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Cricket Player Auction</h1>
+
+<table>
+
+<tr>
+<th>Player</th>
+<th>Current Bid</th>
+<th>Place Bid</th>
+</tr>
+
+{% for player,bid in players.items() %}
+
+<tr>
+
+<td>{{player}}</td>
+
+<td>₹{{bid}}</td>
+
+<td>
+
+<form action="/bid" method="POST">
+
+<input type="hidden" name="player" value="{{player}}">
+
+<input type="number" name="bid" placeholder="Enter bid" required>
+
+<button type="submit">Bid</button>
+
+</form>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Cricket Auction</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:linear-gradient(135deg,#020617,#1e3a8a);
+color:white;
+text-align:center;
+padding:40px;
+}
+
+table{
+margin:auto;
+border-collapse:collapse;
+width:70%;
+background:#0f172a;
+}
+
+th{
+background:#2563eb;
+padding:15px;
+}
+
+td{
+padding:12px;
+border-bottom:1px solid #334155;
+}
+
+button{
+padding:8px 14px;
+background:#22c55e;
+border:none;
+border-radius:6px;
+color:white;
+cursor:pointer;
+}
+
+.error{
+color:#ef4444;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🏏 Cricket Player Auction</h1>
+
+<a href="/">
+<button style="margin-bottom:20px;background:#ef4444;">
+Home
+</button>
+</a>
+
+{% if error %}
+<div class="error">
+{{error}}
+</div>
+{% endif %}
+
+<table>
+
+<tr>
+<th>Player</th>
+<th>Current Bid</th>
+<th>Place Bid</th>
+</tr>
+
+{% for player,bid in players.items() %}
+
+<tr>
+
+<td>{{player}}</td>
+
+<td>₹{{bid}}</td>
+
+<td>
+
+<form action="/bid" method="POST">
+
+<input type="hidden" name="player" value="{{player}}">
+
+<input type="number" name="bid" required>
+
+<button type="submit">Bid</button>
+
+</form>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+<h3>Last Bid By: {{last}}</h3>
+
+</table>
+
+</body>
+
+</html>

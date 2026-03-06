@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Select Player Type</title>
+
+<style>
+
+body{
+font-family: Arial;
+background: linear-gradient(135deg,#020617,#1e40af);
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+}
+
+.container{
+background:#0f172a;
+padding:40px;
+border-radius:15px;
+box-shadow:0 0 25px rgba(0,0,0,0.6);
+width:350px;
+text-align:center;
+}
+
+select{
+width:100%;
+padding:10px;
+border-radius:8px;
+border:none;
+margin-bottom:20px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#f59e0b;
+border:none;
+border-radius:8px;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#d97706;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Select Player Type</h2>
+
+<form action="/players" method="POST">
+
+<input type="hidden" name="country" value="{{country}}">
+
+<select name="ptype">
+
+{% for t in types %}
+<option>{{t}}</option>
+{% endfor %}
+
+</select>
+
+<button type="submit">Next →</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
